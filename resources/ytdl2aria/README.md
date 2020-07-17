@@ -1,0 +1,7 @@
+# ytdl2aria
+a program that converts a list-of links (that were compatible with one of YouTube-DL's extractors) into a text-file compatible with ARIA2C's `--input-file=`  argument, to help parallel-download, which is one line of URL, followed with next-line starting with couple of whitespace and `out="..filename.."`. The scripts runs (parallel multi-process) YouTube-DL, parse the output JSON extracting some of the data and writes a text-file. Side project of 'github.com/eladkarako/youtube-dl-p/'. Includes NodeJS binary, no dependencies, ready to run, example included.
+
+
+progress is written using `console.error`, to STDERR. Exit-code is either `111` (empty content) or `0` (success).
+
+`_just__single_url__to__aria2c_inputfile_entry.js` is the first-step of the project that accepted (as a program argument), the download-URL, and was outputted (to STDOUT) a single entry to be-combined to an aria2c-compatible-`--input-file` text content (with a lot of exit-code specification) but a more efficient way was to let NodeJS handle the multi-process (parallel) calls to `YouTube-dl` instead of the buggy `CMD`. NodeJS makes file read/write/process easier too, the CMD is limited to providing the NodeJS script with an fully-qualified (absolute) path within the operation-system, and error handling missing arguments.
