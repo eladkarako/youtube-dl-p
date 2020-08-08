@@ -34,11 +34,11 @@ del /f /q "..\youtube-dl\youtube-dl.rar"
 
 
 ::updating "help"-information.
-echo version:                          >..\readme_youtube-dl.nfo
-call "..\youtube-dl.cmd" "--version"  >>..\readme_youtube-dl.nfo
-echo -------------------------------- >>..\readme_youtube-dl.nfo
-echo.                                 >>..\readme_youtube-dl.nfo
-call "..\youtube-dl.cmd" "--help"     >>..\readme_youtube-dl.nfo
+echo version:                            >..\readme_youtube-dl.nfo
+call "..\..\youtube-dl.cmd" "--version"  >>..\readme_youtube-dl.nfo
+echo --------------------------------    >>..\readme_youtube-dl.nfo
+echo.                                    >>..\readme_youtube-dl.nfo
+call "..\..\youtube-dl.cmd" "--help"     >>..\readme_youtube-dl.nfo
 
 
 goto END
